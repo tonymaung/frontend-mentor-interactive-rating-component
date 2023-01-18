@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+        <div class="inner-container">
+          <div class="circle">
+            <img src="./icon-star.svg" alt="" />
+          </div>
+          <h1 class="heading">How did we do?</h1>
+          <p class="description">
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+
+          <ul class="rating-row">
+            <li>
+              <button class="rating-circle" id="1" onclick="changeValue(1)">
+                1
+              </button>
+            </li>
+            <li>
+              <button class="rating-circle" id="2" onclick="changeValue(2)">
+                2
+              </button>
+            </li>
+            <li>
+              <button class="rating-circle" id="3" onclick="changeValue(3)">
+                3
+              </button>
+            </li>
+            <li>
+              <button class="rating-circle" id="4" onclick="changeValue(4)">
+                4
+              </button>
+            </li>
+            <li>
+              <button
+                class="rating-circle"
+                id="5"
+                onclick="changeValue(5)"
+                onselect=""
+              >
+                5
+              </button>
+            </li>
+          </ul>
+
+          <button class="submit" onclick="changeContent()">submit</button>
+        </div>
+        <div class="thank-you-container">
+          <img src="./illustration-thank-you.svg" alt="" />
+          <div class="selected">
+            You selected&nbsp;<span id="rate">4</span>&nbsp;out of 5!
+          </div>
+          <h1 class="thank-you-heading">Thank you!</h1>
+          <p class="thank-you-desc">
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don’t hesitate to get in touch!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by&nbsp;
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by&nbsp;
+      <a href="https://tonymaung.github.io/my-portfolio/">Tony Maung</a>.
+    </div>
+    <!--    
+   Rating state start
+
+    How did we do? Please let us know how we did with your support request. All
+    feedback is appreciated to help us improve our offering! 1 2 3 4 5 Submit
+
+    Rating state end 
+
+   Thank you state start 
+
+    You selected
+ Add rating here
+    out of 5 Thank you! We appreciate you taking the time to give a rating. If
+    you ever need more support, don’t hesitate to get in touch!
+
+    Thank you state end 
+  -->
+    <script>
+      function changeValue(number) {
+        document.querySelector("#rate").innerText = number;
+      }
+      function changeContent() {
+        document.querySelector(".inner-container").style.display = "none";
+        document.querySelector(".thank-you-container").style.display = "flex";
+      }
+    </script>
+  </body>
+</html>
